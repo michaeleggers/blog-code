@@ -1,3 +1,5 @@
+#include <stdalign.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,6 +57,14 @@ void arena_print_stats() {
 }
 
 int main(int argc, char **argv) {
+
+  printf("System stats:\n");
+  printf("-------------\n");
+  printf("_Alignof(max_align_t): %zu\n", _Alignof(max_align_t));
+  printf("_Alignof(u8): %zu\n", _Alignof(u8));
+  printf("_Alignof(u32): %zu\n", _Alignof(u32));
+  printf("_Alignof(double): %zu\n", _Alignof(double));
+  printf("_Alignof(long double): %zu\n", _Alignof(long double));
 
   printf("Initialize Memory Sytem:\n");
   init_memory(513);
